@@ -79,16 +79,20 @@ window.plugin.polygonLabel.addLabel = function(layer, p) {
   if (!name) return;
 
   var poly = layer.getLatLngs();
-  var glat = 0;
-  var glng = 0;
   var n = poly.length;
   if (n == 0) return;
+  var glat = 0.0, glng = 0.0, area = 0.0;
+  var p1 = poly[n-1];
   for (var i = 0; i < n; i++) {
-    glat += poly[i].lat;
-    glng += poly[i].lng;
+    var p2 = poly[i];
+    var s = (p2.lat * p1.lng - p1.lat * p2.lng) / 2.0;
+    area += s;
+    glat += s * (p1.lat + p2.lat) / 3.0;
+    glng += s * (p1.lng + p2.lng) / 3.0;
+    p1 = p2;
   }
-  glat /= (n + 0.0);
-  glng /= (n + 0.0);
+  glat /= (area + 0.0);
+  glng /= (area + 0.0);
   var guid = glat + ',' + glng;
 
   // remove old layer before updating
