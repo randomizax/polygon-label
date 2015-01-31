@@ -3,6 +3,6 @@ SRCS = $(wildcard src/*.js src/*.css)
 
 all: $(SCRIPTS)
 
-$(SCRIPTS): $(SRCS)
+$(SCRIPTS): $(SRCS) build.py
 	./build.py randomizax
 	cp build/randomizax/*.js .
