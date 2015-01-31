@@ -2,7 +2,7 @@
 // @id             iitc-plugin-polygon-label@randomizax
 // @name           IITC plugin: Polygon Labels
 // @category       Layer
-// @version        0.1.2.@@DATETIMEVERSION@@
+// @version        0.1.3.@@DATETIMEVERSION@@
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      @@UPDATEURL@@
 // @downloadURL    @@DOWNLOADURL@@
