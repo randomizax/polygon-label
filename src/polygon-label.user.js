@@ -2,15 +2,13 @@
 // @id             iitc-plugin-polygon-label@randomizax
 // @name           IITC plugin: Polygon Labels
 // @category       Layer
-// @version        1.0.0.@@DATETIMEVERSION@@
-// @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
+// @version        2.0.0.@@DATETIMEVERSION@@
+// @namespace      https://github.com/IITC-CE/ingress-intel-total-conversion
 // @updateURL      @@UPDATEURL@@
 // @downloadURL    @@DOWNLOADURL@@
 // @description    [@@BUILDNAME@@-@@BUILDDATE@@] Show portal hack details on map.
-// @include        https://*.ingress.com/intel*
-// @include        http://*.ingress.com/intel*
-// @match          https://*.ingress.com/intel*
-// @match          http://*.ingress.com/intel*
+// @include        https://intel.ingress.com/*
+// @match          https://intel.ingress.com/*
 // @grant          none
 // ==/UserScript==
 
@@ -94,7 +92,8 @@ window.plugin.polygonLabel.addLabel = function(layer, p) {
       iconSize: [window.plugin.polygonLabel.ICON_SIZE * 4, window.plugin.polygonLabel.ICON_SIZE],
       html: name
       }),
-    guid: guid
+    guid: guid,
+    interactive: false
   });
   plugin.polygonLabel.levelLayers[guid] = level;
   level.addTo(plugin.polygonLabel.levelLayerGroup);
